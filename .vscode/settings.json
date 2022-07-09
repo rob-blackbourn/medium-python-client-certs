@@ -1,0 +1,16 @@
+{
+    "[python]": {
+        "editor.wordBasedSuggestions": false,
+        "editor.formatOnSave": true,
+        "editor.rulers": [80]
+    },
+    "python.linting.pylintEnabled": true,
+    "python.linting.mypyEnabled": true,
+    "cSpell.words": [
+        "acked",
+        "bareasgi",
+        "bareutils",
+        "httpx",
+        "ndjson"
+    ]
+}

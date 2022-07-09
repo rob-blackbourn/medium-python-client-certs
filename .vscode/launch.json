@@ -1,0 +1,72 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Step 1: Server",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/echo/step1_server.py",
+            "console": "integratedTerminal",
+            "justMyCode": true
+        },
+        {
+            "name": "Step 1: Client",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/echo/step1_client.py",
+            "console": "integratedTerminal",
+            "justMyCode": true
+        },
+        {
+            "name": "Step 2: Server",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/echo/step2_server.py",
+            "console": "integratedTerminal",
+            "justMyCode": true
+        },
+        {
+            "name": "Step 2: Client",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/echo/step2_client.py",
+            "console": "integratedTerminal",
+            "justMyCode": true
+        },
+        {
+            "name": "Step 3: Server",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/echo/step3_server.py",
+            "console": "integratedTerminal",
+            "justMyCode": true
+        },
+        {
+            "name": "Step 3: Client",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/echo/step3_client.py",
+            "console": "integratedTerminal",
+            "justMyCode": true
+        },
+        {
+            "name": "Step 4: Server",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/echo/step4_server.py",
+            "console": "integratedTerminal",
+            "justMyCode": true
+        },
+        {
+            "name": "Step 4: Client",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/echo/step4_client.py",
+            "console": "integratedTerminal",
+            "justMyCode": true
+        }
+   ]
+}
