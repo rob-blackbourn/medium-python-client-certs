@@ -27,9 +27,6 @@ async def main():
         expanduser("~/.keys/server.crt"),
         expanduser("~/.keys/server.key")
     )
-    context.load_verify_locations(
-        expanduser("~/.keys/cacerts.pem")
-    )
 
     server = await asyncio.start_server(
         handle_echo,
@@ -38,7 +35,10 @@ async def main():
         ssl=context
     )
 
-    addrs = ', '.join(str(sock.getsockname()) for sock in server.sockets)
+    addrs = ', '.join(
+        str(sock.getsockname())
+        for sock in server.sockets
+    )
     print(f'Serving on {addrs}')
 
     async with server:

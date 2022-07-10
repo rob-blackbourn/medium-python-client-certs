@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "echo-server"
+name = "medium-python-client-certs"
 version = "0.1.0"
 description = ""
 authors = ["Rob Blackbourn <rob.blackbourn@gmail.com>"]
@@ -12,7 +12,7 @@ python = "^3.9"
 aioconsole = "^0.5.0"
 hypercorn = "^0.13.2"
 httpx = "^0.23.0"
-bareasgi = "^4.0.1"
+bareasgi = "^4.1.0"
 
 [tool.poetry.dev-dependencies]
 

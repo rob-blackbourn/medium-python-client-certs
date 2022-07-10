@@ -40,7 +40,10 @@ async def main():
         ssl=context
     )
 
-    addrs = ', '.join(str(sock.getsockname()) for sock in server.sockets)
+    addrs = ', '.join(
+        str(sock.getsockname())
+        for sock in server.sockets
+    )
     print(f'Serving on {addrs}')
 
     async with server:

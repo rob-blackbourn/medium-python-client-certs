@@ -12,6 +12,7 @@ async def tcp_echo_client(message):
         expanduser("~/.keys/cacerts.pem")
     )
     context.verify_mode = ssl.CERT_REQUIRED
+    context.check_hostname = True
 
     reader, writer = await asyncio.open_connection(
         host,

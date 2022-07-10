@@ -25,7 +25,7 @@ trio = ["trio (>=0.16)"]
 
 [[package]]
 name = "bareasgi"
-version = "4.0.1"
+version = "4.1.0"
 description = "A lightweight ASGI framework"
 category = "main"
 optional = false
@@ -213,7 +213,7 @@ h11 = ">=0.9.0,<1"
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.9"
-content-hash = "ef65e7fafe8da82497e5f0eb86f394c32787296d3c58ce8d07676fffc480f959"
+content-hash = "b3b49b4f51693b877406bfca3c36a40e333bca6c36b0ddfd1dadf6b60f9504b2"
 
 [metadata.files]
 aioconsole = [
@@ -223,10 +223,7 @@ anyio = [
     {file = "anyio-3.6.1-py3-none-any.whl", hash = "sha256:cb29b9c70620506a9a8f87a309591713446953302d7d995344d0d7c6c0c9a7be"},
     {file = "anyio-3.6.1.tar.gz", hash = "sha256:413adf95f93886e442aea925f3ee43baa5a765a64a0f52c6081894f9992fdd0b"},
 ]
-bareasgi = [
-    {file = "bareasgi-4.0.1-py3-none-any.whl", hash = "sha256:6739c321827872660c86b84d1245be883f1939d8add099b91659b59918b7a6f2"},
-    {file = "bareasgi-4.0.1.tar.gz", hash = "sha256:4f547399dabc4b624d6e00901da13a96b8f05fd78ecbe0c1def528e8b231ed79"},
-]
+bareasgi = []
 bareutils = [
     {file = "bareutils-4.0.1-py3-none-any.whl", hash = "sha256:5295cbd5ae226965e9ffe058f667f5c3af3f22789305743067f9ebf4035d5e11"},
     {file = "bareutils-4.0.1.tar.gz", hash = "sha256:716ab5aac4a21fc532265c136be35459237d7201adea681d238d1790881a421f"},

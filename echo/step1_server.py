@@ -2,6 +2,7 @@
 
 import asyncio
 
+
 async def handle_echo(reader, writer):
     data = await reader.read(100)
     message = data.decode()
@@ -16,6 +17,7 @@ async def handle_echo(reader, writer):
     print("Close the connection")
     writer.close()
 
+
 async def main():
     server = await asyncio.start_server(
         handle_echo,
@@ -23,7 +25,10 @@ async def main():
         8888
     )
 
-    addrs = ', '.join(str(sock.getsockname()) for sock in server.sockets)
+    addrs = ', '.join(
+        str(sock.getsockname())
+        for sock in server.sockets
+    )
     print(f'Serving on {addrs}')
 
     async with server:

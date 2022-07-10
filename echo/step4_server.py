@@ -5,16 +5,12 @@ import ssl
 
 from hypercorn.asyncio import serve
 from hypercorn.config import Config
-from bareasgi import Application, HttpRequest, HttpResponse, text_reader, text_writer
+from bareasgi import Application, HttpRequest, HttpResponse, text_reader
 
 
 async def echo(request: HttpRequest) -> HttpResponse:
     body = await text_reader(request.body)
-    return HttpResponse(
-        200,
-        [(b'content_type', b'text/plain')],
-        text_writer(body)
-    )
+    return HttpResponse.from_text(body)
 
 
 async def main():
