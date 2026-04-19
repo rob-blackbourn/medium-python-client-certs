@@ -4,17 +4,15 @@ import socket
 import ssl
 
 
-async def tcp_echo_client(message):
-    host = socket.gethostname()
+async def tcp_echo_client(message: str) -> None:
+    host = socket.getfqdn()
 
     context = ssl.SSLContext(ssl.PROTOCOL_TLS)
     context.load_cert_chain(
         expanduser("~/.keys/client.crt"),
         expanduser("~/.keys/client.key")
     )
-    context.load_verify_locations(
-        expanduser("~/.keys/cacerts.pem")
-    )
+    # context.load_verify_locations(expanduser("~/.keys/cacerts.pem"))
     context.verify_mode = ssl.CERT_REQUIRED
     context.check_hostname = True
 
@@ -36,4 +34,6 @@ async def tcp_echo_client(message):
     print('Close the connection')
     writer.close()
 
-asyncio.run(tcp_echo_client('Hello World!'))
+
+if __name__ == "__main__":
+    asyncio.run(tcp_echo_client('Hello World!'))

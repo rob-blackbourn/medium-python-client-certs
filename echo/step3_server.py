@@ -1,10 +1,11 @@
 import asyncio
+from asyncio import StreamReader, StreamWriter
 from os.path import expanduser
 import socket
 import ssl
 
 
-async def handle_echo(reader, writer):
+async def handle_echo(reader: StreamReader, writer: StreamWriter) -> None:
     data = await reader.read(100)
     message = data.decode()
     addr = writer.get_extra_info('peername')
@@ -19,7 +20,7 @@ async def handle_echo(reader, writer):
     writer.close()
 
 
-async def main():
+async def main() -> None:
     host = socket.gethostname()
 
     context = ssl.SSLContext(ssl.PROTOCOL_TLS)
@@ -27,9 +28,7 @@ async def main():
         expanduser("~/.keys/server.crt"),
         expanduser("~/.keys/server.key")
     )
-    context.load_verify_locations(
-        expanduser("~/.keys/cacerts.pem")
-    )
+    context.load_verify_locations(expanduser("~/.keys/cacerts.pem"))
     context.verify_mode = ssl.CERT_REQUIRED
     context.check_hostname = True
 

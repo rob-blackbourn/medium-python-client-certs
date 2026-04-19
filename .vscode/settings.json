@@ -1,6 +1,6 @@
 {
     "[python]": {
-        "editor.wordBasedSuggestions": false,
+        "editor.wordBasedSuggestions": "off",
         "editor.formatOnSave": true,
         "editor.rulers": [80]
     },
@@ -9,14 +9,22 @@
     "cSpell.words": [
         "acked",
         "addrs",
+        "aioconsole",
         "bareasgi",
         "bareutils",
+        "booleaness",
         "cacerts",
         "gethostname",
         "httpx",
         "hypercorn",
+        "mypy",
         "ndjson",
         "peercert",
-        "peername"
+        "peername",
+        "pylint",
+        "pytest",
+        "setuptools",
+        "testpaths",
+        "venv"
     ]
 }

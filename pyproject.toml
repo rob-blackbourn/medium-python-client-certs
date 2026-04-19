@@ -1,21 +1,73 @@
-[tool.poetry]
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
 name = "medium-python-client-certs"
 version = "0.1.0"
-description = ""
-authors = ["Rob Blackbourn <rob.blackbourn@gmail.com>"]
-packages = [
-    { include = "echo" }
+authors = [
+  { name="Rob Blackbourn", email="rob.blackbourn@gmail.com" },
+]
+description = "Code for Medium article on asyncio SSL"
+requires-python = ">=3.12"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+readme = "README.md"
+dependencies = [
+    "aioconsole>=0.5.0,<1",
+    "hypercorn>=0.13.2,<1",
+    "httpx>=0.28.1,<1",
+    "bareasgi>=4.1.0,<5",
 ]
 
-[tool.poetry.dependencies]
-python = "^3.9"
-aioconsole = "^0.5.0"
-hypercorn = "^0.13.2"
-httpx = "^0.23.0"
-bareasgi = "^4.1.0"
+[project.optional-dependencies]
+dev = [
+    "pytest",
+    "pylint",
+    "mypy"
+]
 
-[tool.poetry.dev-dependencies]
+[project.urls]
+Homepage = "https://github.com/rob-blackbourn/medium-python-client-certs"
+Issues = "https://github.com/rob-blackbourn/medium-python-client-certs/issues"
 
-[build-system]
-requires = ["poetry-core>=1.0.0"]
-build-backend = "poetry.core.masonry.api"
+# pytest
+[tool.pytest.ini_options]
+testpaths = [
+    "tests",
+]
+
+# mypy
+[tool.mypy]
+files = [ "src/echo", "tests", "scratch" ]
+
+[[tool.mypy.overrides]]
+module = "pytest"
+ignore_missing_imports = true
+
+# pylint
+[tool.pylint.main]
+py-version = "3.12"
+jobs = 4
+
+[tool.pylint.basic]
+good-names = ["i", "j", "k", "ex", "Run", "_"]
+bad-names = ["foo", "bar", "baz", "toto", "tutu", "tata"]
+
+[tool.pylint."messages control"]
+disable = [
+    "raw-checker-failed",
+    "bad-inline-option",
+    "locally-disabled",
+    "file-ignored",
+    "suppressed-message",
+    "useless-suppression",
+    "deprecated-pragma",
+    "use-symbolic-message-instead",
+    "use-implicit-booleaness-not-comparison-to-string",
+    "use-implicit-booleaness-not-comparison-to-zero",
+    "missing-module-docstring",
+]
