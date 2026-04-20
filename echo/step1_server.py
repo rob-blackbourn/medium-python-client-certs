@@ -1,9 +1,10 @@
 # See: https://docs.python.org/3/library/asyncio-stream.html#tcp-echo-server-using-streams
 
 import asyncio
+from asyncio import StreamReader, StreamWriter
 
 
-async def handle_echo(reader, writer):
+async def handle_echo(reader: StreamReader, writer: StreamWriter) -> None:
     data = await reader.read(100)
     message = data.decode()
     addr = writer.get_extra_info('peername')
@@ -18,7 +19,7 @@ async def handle_echo(reader, writer):
     writer.close()
 
 
-async def main():
+async def main() -> None:
     server = await asyncio.start_server(
         handle_echo,
         '127.0.0.1',
@@ -33,5 +34,6 @@ async def main():
 
     async with server:
         await server.serve_forever()
+
 
 asyncio.run(main())

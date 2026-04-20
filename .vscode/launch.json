@@ -6,7 +6,7 @@
     "configurations": [
         {
             "name": "Step 1: Server",
-            "type": "python",
+            "type": "debugpy",
             "request": "launch",
             "program": "${workspaceFolder}/echo/step1_server.py",
             "console": "integratedTerminal",
@@ -14,7 +14,7 @@
         },
         {
             "name": "Step 1: Client",
-            "type": "python",
+            "type": "debugpy",
             "request": "launch",
             "program": "${workspaceFolder}/echo/step1_client.py",
             "console": "integratedTerminal",
@@ -22,7 +22,7 @@
         },
         {
             "name": "Step 2: Server",
-            "type": "python",
+            "type": "debugpy",
             "request": "launch",
             "program": "${workspaceFolder}/echo/step2_server.py",
             "console": "integratedTerminal",
@@ -30,7 +30,7 @@
         },
         {
             "name": "Step 2: Client",
-            "type": "python",
+            "type": "debugpy",
             "request": "launch",
             "program": "${workspaceFolder}/echo/step2_client.py",
             "console": "integratedTerminal",
@@ -38,7 +38,7 @@
         },
         {
             "name": "Step 3: Server",
-            "type": "python",
+            "type": "debugpy",
             "request": "launch",
             "program": "${workspaceFolder}/echo/step3_server.py",
             "console": "integratedTerminal",
@@ -46,7 +46,7 @@
         },
         {
             "name": "Step 3: Client",
-            "type": "python",
+            "type": "debugpy",
             "request": "launch",
             "program": "${workspaceFolder}/echo/step3_client.py",
             "console": "integratedTerminal",
@@ -54,7 +54,7 @@
         },
         {
             "name": "Step 4: Server",
-            "type": "python",
+            "type": "debugpy",
             "request": "launch",
             "program": "${workspaceFolder}/echo/step4_server.py",
             "console": "integratedTerminal",
@@ -62,11 +62,11 @@
         },
         {
             "name": "Step 4: Client",
-            "type": "python",
+            "type": "debugpy",
             "request": "launch",
             "program": "${workspaceFolder}/echo/step4_client.py",
             "console": "integratedTerminal",
             "justMyCode": true
         }
-   ]
+    ]
 }

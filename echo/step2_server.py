@@ -1,10 +1,11 @@
 import asyncio
+from asyncio import StreamReader, StreamWriter
 from os.path import expanduser
 import socket
 import ssl
 
 
-async def handle_echo(reader, writer):
+async def handle_echo(reader: StreamReader, writer: StreamWriter) -> None:
     data = await reader.read(100)
     message = data.decode()
     addr = writer.get_extra_info('peername')
@@ -19,7 +20,7 @@ async def handle_echo(reader, writer):
     writer.close()
 
 
-async def main():
+async def main() -> None:
     host = socket.gethostname()
 
     context = ssl.SSLContext(ssl.PROTOCOL_TLS)

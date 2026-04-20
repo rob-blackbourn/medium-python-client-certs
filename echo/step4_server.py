@@ -14,7 +14,7 @@ async def echo(request: HttpRequest) -> HttpResponse:
 
 
 async def main():
-    host = socket.gethostname()
+    host = socket.getfqdn()
 
     app = Application()
     app.http_router.add({'POST'}, '/echo', echo)

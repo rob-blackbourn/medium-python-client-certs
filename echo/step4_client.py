@@ -6,8 +6,8 @@ import ssl
 import httpx
 
 
-async def http_echo_client(message: str):
-    host = socket.gethostname()
+async def http_echo_client(message: str) -> None:
+    host = socket.getfqdn()
 
     context = ssl.SSLContext(ssl.PROTOCOL_TLS)
     context.check_hostname = True
@@ -25,4 +25,6 @@ async def http_echo_client(message: str):
         )
         print(response.content.decode())
 
-asyncio.run(http_echo_client('Hello World!'))
+
+if __name__ == "__main__":
+    asyncio.run(http_echo_client('Hello World!'))
